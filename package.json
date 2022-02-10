@@ -1,0 +1,21 @@
+{
+  "name": "tryexpress",
+  "version": "1.0.0",
+  "description": "Trying Express.js with mySQL Database",
+  "main": "app",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon --watch app --watch libs app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express"
+  ],
+  "author": "Nitryuu",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mariadb": "^2.5.5"
+  }
+}

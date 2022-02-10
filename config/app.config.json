@@ -1,0 +1,10 @@
+{
+    "db": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "tryexpress",
+        "charset": "utf8mb4",
+        "rejectEmpty": true
+    }
+}
