@@ -1,18 +1,19 @@
 const express = require('express')
 const response = require('../utils/response')
-const Teacher = require('../models/TeacherModel')
+const Store = require('../models/StoreModel')
 
 const router = express.Router()
 
 router
   .get('/', async (req, res) => {
-    const data = await Teacher.getAll()
+    const data = await Store.getAll()
 
     response.send(res, data)
   })
 
-  .post('/', async (req, res) => {
-    const data = await Teacher.store(req.body)
+  .get('/:id', async (req, res) => {
+    let id = req.params.id
+    const data = await Store.getById(id)
 
     response.send(res, data)
   })

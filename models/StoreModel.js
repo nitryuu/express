@@ -1,17 +1,17 @@
 const schema = require('../utils/schema')
 
-class Student {
+class Store {
   getAll = async () => {
     try {
       const params = []
-      const list = await schema.getAll('students', params)
+      const list = await schema.getAll('store', params)
 
       return {
         success: true,
         data: list,
       }
     } catch (error) {
-      console.log('Student Index Error ', error)
+      console.log('Store Index Error ', error)
 
       return {
         success: false,
@@ -20,18 +20,19 @@ class Student {
     }
   }
 
-  store = async ({ name, grade }) => {
+  getById = async (id) => {
     try {
-      const fields = ['name', 'grade']
-      const params = [name, grade]
+      const params = []
+      const appendCondition = `WHERE id = ${id}`
+      const list = await schema.getAll('store', params, '*', appendCondition)
 
-      const list = await schema.create('students', fields, params)
       return {
         success: true,
         data: list,
       }
     } catch (error) {
-      console.log('Student Store Error ', error)
+      console.log('Store Show Error ', error)
+
       return {
         success: false,
         error,
@@ -40,4 +41,4 @@ class Student {
   }
 }
 
-module.exports = new Student()
+module.exports = new Store()

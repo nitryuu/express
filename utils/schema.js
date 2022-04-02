@@ -11,6 +11,23 @@ class Index {
     return data
   }
 
+  getJoin = async (
+    table1,
+    table2,
+    ids,
+    params,
+    selectedFields = '*',
+    extendCondition = ''
+  ) => {
+    const sql = {
+      query: `SELECT ${selectedFields} FROM ${table1} INNER JOIN ${table2} ON ${ids} ${extendCondition}`,
+      params: params,
+    }
+
+    const data = await mysql.query(sql.query, sql.params)
+    return data
+  }
+
   create = async (table, fields, params, extendCondition = '') => {
     const field = fields.join(',')
     const values = Array(fields.length).fill('?')

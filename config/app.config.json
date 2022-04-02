@@ -3,7 +3,7 @@
         "host": "localhost",
         "user": "root",
         "password": "",
-        "database": "tryexpress",
+        "database": "gas",
         "charset": "utf8mb4",
         "rejectEmpty": true
     }
